@@ -1,0 +1,25 @@
+fieldset {
+  padding: revert !important;
+  border: 1px solid #13131357 !important;
+}
+legend {
+  width: unset !important;
+}
+.jumbotron{
+  height: auto;
+  background-color: #c0ff9d !important;
+  margin-top: 30px;
+}
+.container{
+  max-width: 1090px !important;
+}
+.error_usuario{
+  color: #FF0000;
+}
+td{
+  cursor:pointer;
+  text-align: center;
+}
+td:hover{
+  background-color: #81ff77;
+}

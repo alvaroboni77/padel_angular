@@ -1,0 +1,22 @@
+.jumbotron{
+  background-image: url("../../assets/img/padelHero.jpg");
+  background-size: cover;
+  height: 343px;
+  background-position-y: 369px;
+  margin-top: 14px;
+  opacity: 0.9;
+}
+#logoUPMJumbotron{
+  width: 190px;
+}
+.texto_jumbotron{
+  color: #fff;
+  font-weight: bold;
+}
+.titulo_col{
+  border: 1px solid #808080;
+  background-color: #bede8f;
+}
+.img_col{
+  width: inherit;
+}

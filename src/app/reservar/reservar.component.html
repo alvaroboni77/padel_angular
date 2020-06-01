@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="jumbotron">
+    <form id="login_form">
+      <fieldset>
+        <legend>Reserva de pista:</legend>
+        <div class="form-group row mt-3 offset-1">
+          <label for="inputFecha" class="col-sm-3 col-form-label text-right">Elija la fecha deseada</label>
+          <div class="col-sm-5">
+            <input type="date" #fecha  [(ngModel)] = "mydate" class="form-control" id="inputFecha" name="myfecha" required>
+          </div>
+        </div>
+        <div class="form-group row offset-1">
+          <div class="col-sm-2 offset-5">
+            <button type="submit" (click)="getReservations(fecha.value)" id="login_btn" class="btn btn-primary">Enviar</button>
+          </div>
+        </div>
+        <div *ngIf="reservaRealizada" class="text-center">
+          <h4>Reserva realizada</h4>
+          <p>Fecha de reserva: {{fechaReserva}}</p>
+          <p>Numero de pista: {{idPista}}</p>
+        </div>
+        <h4 *ngIf="errorLogout" class="error_usuario text-center">Necesitas estar logueado para poder hacer reservas</h4>
+        <h4 *ngIf="errorMaxReservations" class="error_usuario text-center">Máximo número de reservas permitidas realizadas</h4>
+        <h4 *ngIf="errorOcupada" class="error_usuario text-center">Por favor, seleccione una pista libre</h4>
+        <table *ngIf="horario" class="table">
+          <thead>
+          <tr>
+            <th scope="col" *ngFor="let hora of horas">{{hora}}</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let nombrePista of nombrePistas; let i = index">
+            <th scope="row" class="text-center">{{nombrePista}}</th>
+            <td class="celdas_horas" *ngFor="let pista of pistas[i]; let j = index" [attr.data-pista]="i" [attr.data-hora]="j" [attr.data-fecha]="mydate" (click)="sendReservation($event)">{{pista}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </fieldset>
+    </form>
+  </div>
+</div>

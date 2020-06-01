@@ -1,0 +1,10 @@
+.navbar{
+  background-color: #c0ff9d;
+}
+.navbar-brand {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+#logoUPM{
+  width: 60px;
+}
